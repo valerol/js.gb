@@ -31,8 +31,11 @@
 <script>
   "use strict";
 
+  /**
+   * @param {number}
+   * @returns {object}
+   */
   function getDigitsOfNumber() {
-    const userNumber = prompt("Введите целое положительное число от 0 до 1000");
     let result = {};
 
     if (isNaN(userNumber) || userNumber > 999 || userNumber < 0) {
@@ -45,7 +48,8 @@
     return result;
   }
 
-  console.log(getDigitsOfNumber());
+  const userNumber = prompt("Введите целое положительное число от 0 до 1000");
+  console.log(getDigitsOfNumber(userNumber));
 </script>
 </body>
 </html>
