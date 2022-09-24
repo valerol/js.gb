@@ -44,7 +44,8 @@
     },
   ];
 
-  console.log(products.filter(prod => prod.photos != undefined && prod.photos.length));
+  console.log(products.filter(prod => prod.photos != undefined
+          && prod.photos.length));
   products.sort((a, b) => a.price - b.price);
   console.log(products);
 </script>
