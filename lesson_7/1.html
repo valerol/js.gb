@@ -36,7 +36,7 @@
 
   <div class="text">Уверен, ты справишься с этим заданием!</div>
 
-  <input type="range" min="20" max="100">
+  <input type="range" min="20" max="100" value="30">
   <div id="inputDiv">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, expedita.
   </div>
@@ -61,13 +61,13 @@
   };
 
   const navLinks = document.querySelectorAll('.nav-link');
+  const textBlock = document.querySelector('div.text');
 
   document.querySelector('.nav-tabs').addEventListener('click', (event) => {
     if (event.target.classList.contains('nav-link')) {
-      navLinks.forEach(link => link.classList.remove('active'));
+      document.querySelector('.nav-link.active').classList.remove('active');
       event.target.classList.add('active');
-      document.querySelector('div.text').textContent =
-              panelText[event.target.parentElement.dataset.text];
+      textBlock.textContent = panelText[event.target.parentElement.dataset.text];
     }
   });
 
@@ -79,7 +79,9 @@
   перетаскивании ползунка.
    */
 
-  document.querySelector('input[type=range]').addEventListener('input', (event) => {
+  const inputRange = document.querySelector('input[type=range]');
+
+  inputRange.addEventListener('input', (event) => {
     document.querySelector('#inputDiv').style.fontSize = `${event.target.value}px`;
   });
 </script>
