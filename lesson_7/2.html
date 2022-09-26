@@ -81,7 +81,7 @@
   document.querySelector('header').addEventListener('click', event => {
     if (event.target.classList.contains('menuButton')) {
       productsEl.innerHTML = products[event.target.dataset.type]
-              .map(product => product.getProductMarkup());
+              .map(product => product.getProductMarkup()).join('');
     }
   });
 
